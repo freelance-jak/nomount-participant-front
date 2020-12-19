@@ -1,8 +1,3 @@
-# Next.js starter template.
+# ノーマウント参加者管理アプリ(フロント)
 
-- Next.js
-- TypeScript
-- ESLint
-- Prettier
-- Jest
-- Tailwind CSS
+- イエーイ
