@@ -7,7 +7,7 @@ const App = (props: AppProps) => {
   return (
     <>
       <Head>
-        <title>nexst2</title>
+        <title>ノーマウント参加者管理アプリ</title>
       </Head>
       <props.Component {...props.pageProps} />
     </>
