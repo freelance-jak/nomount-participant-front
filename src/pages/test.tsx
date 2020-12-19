@@ -1,4 +1,5 @@
 import { SampleButton } from "src/components/atoms/common/buttons/SampleButton";
+import { PageTitle } from "src/components/atoms/common/text/PageTitle";
 import { Layout } from "src/components/layout";
 
 const Test = () => {
@@ -7,10 +8,13 @@ const Test = () => {
   };
 
   return (
-    <Layout>
-      <p>ここにコンポーネントをテストで表示する</p>
-      <SampleButton onClick={onClickSampleButton}>ボタン</SampleButton>
-    </Layout>
+    <>
+      <Layout>
+        <p>ここにコンポーネントをテストで表示する</p>
+        <SampleButton onClick={onClickSampleButton}>ボタン</SampleButton>
+        <PageTitle>2020 JANUARY</PageTitle>
+      </Layout>
+    </>
   );
 };
 
