@@ -6,5 +6,5 @@ type Props = {
 
 export const PageTitle = (props: Props) => {
   const { children } = props;
-  return <h2>{children}</h2>;
+  return <h2 className="text-5xl">{children}</h2>;
 };
