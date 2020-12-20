@@ -1,6 +1,7 @@
 @tailwind base;
 
-/* Write your own custom base styles here */
+/* Google font */
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 
 /* Start purging... */
 @tailwind components;
@@ -10,6 +11,8 @@
   min-height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr auto;
+  font-family: "Lato", sans-serif;
+  color: #021140;
 }
 
 /* Write your own custom component styles here */
