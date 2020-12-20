@@ -26,9 +26,13 @@ export const Member = (props: Props) => {
 
       <div className="my-2">
         {isCancel ? (
-          <button className="text-xs bg-active text-white font-bold py-1.5 px-8 rounded-full">JOIN</button>
+          <button className="text-xs bg-active text-white font-bold py-1.5 px-8 rounded-full focus:outline-none focus:shadow-outline">
+            JOIN
+          </button>
         ) : (
-          <button className="text-xs bg-negative text-white font-bold py-1.5 px-6 rounded-full">CANCEL</button>
+          <button className="text-xs bg-negative text-white font-bold py-1.5 px-6 rounded-full focus:outline-none focus:shadow-outline">
+            CANCEL
+          </button>
         )}
       </div>
     </div>
