@@ -1,4 +1,4 @@
-import { Layout } from "src/components/layout";
+// import { Layout } from "src/components/layout";
 import { Member } from "src/components/organisms/common/Member";
 
 const Home = () => {
