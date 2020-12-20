@@ -17,7 +17,18 @@ const Home = () => {
   //   </Layout>
   // );
 
-  return <Member name="ここにname" id="ここにid" state="ここにステータス" />;
+  return (
+    <>
+      <div className="flex flex-row">
+        <Member name="そるてぃ" id="solty_919" isCancel={true} />
+        <Member name="みずさん" id="mizusima" isCancel={false} />
+        <Member name="そるてぃ" id="solty_919" isCancel={true} />
+        <Member name="みずさん" id="mizusima" isCancel={false} />
+        <Member name="そるてぃ" id="solty_919" isCancel={true} />
+        <Member name="みずさん" id="mizusima" isCancel={false} />
+      </div>
+    </>
+  );
 };
 
 // eslint-disable-next-line import/no-default-export
