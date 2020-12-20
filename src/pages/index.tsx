@@ -1,6 +1,10 @@
+import { SampleButton } from "src/components/atoms/common/buttons/SampleButton";
 import { Layout } from "src/components/layout";
 
 const Home = () => {
+  const onClickSampleButton = () => {
+    alert();
+  };
   return (
     <Layout>
       <button
@@ -11,6 +15,7 @@ const Home = () => {
       >
         Button
       </button>
+      <SampleButton onClick={onClickSampleButton}>ボタン</SampleButton>
     </Layout>
   );
 };
