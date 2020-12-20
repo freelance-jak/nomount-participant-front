@@ -1,7 +1,5 @@
-import React from "react";
 import { SampleButton } from "src/components/atoms/common/buttons/SampleButton";
 import { Layout } from "src/components/layout";
-import { Member } from "src/components/organisms/common/Member";
 
 const Home = () => {
   const onClickSampleButton = () => {
