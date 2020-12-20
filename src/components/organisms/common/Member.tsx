@@ -23,17 +23,13 @@ export const Member = (props: Props) => {
       </div>
 
       <p className="text-primary mt-1">{name}</p>
-      <p className="text-xs text-primary">{id}</p>
+      <p className="text-xs text-negative">{id}</p>
 
-      <div className="mx-3 my-2">
+      <div className="my-2">
         {isCancel ? (
-          <button className="text-xs bg-green-400 hover:bg-green-900 text-white font-bold py-1.5 px-4 rounded">
-            Join
-          </button>
+          <button className="text-xs bg-active text-white font-bold py-1.5 px-8 rounded-full">JOIN</button>
         ) : (
-          <button className="text-xs bg-gray-500 hover:bg-gray-700 text-white font-bold py-1.5 px-4 rounded">
-            Cancel
-          </button>
+          <button className="text-xs bg-negative text-white font-bold py-1.5 px-6 rounded-full">CANCEL</button>
         )}
       </div>
     </div>
