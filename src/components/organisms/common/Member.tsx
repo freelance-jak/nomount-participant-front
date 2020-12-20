@@ -9,30 +9,29 @@ type Props = {
 export const Member = (props: Props) => {
   const { name, id, isCancel } = props;
   return (
-    <div className="flex flex-wrap justify-center content-center flex-col py-3 px-4 text-primary text-center relative">
-      <div className="absolute right-2 top-2">
-        <SpeechBalloon
-          onClick={() => {
-            return alert();
-          }}
-        />
-      </div>
-
-      <div className="flex flex-wrap justify-center content-center h-24 w-24 border-primary border-solid rounded-full border-2">
-        <span className="text-3xl text-primary">M</span>
+    <div className="flex flex-wrap justify-center content-center flex-col py-3 px-4 text-primary text-center">
+      <div className="flex flex-wrap justify-center content-center h-24 w-24 border-primary border-solid rounded-full border-2 relative">
+        <div className="absolute -right-0 -top-2">
+          <SpeechBalloon
+            onClick={() => {
+              return alert();
+            }}
+          />
+        </div>
+        <span className="text-3xl text-primary">{id.toUpperCase().charAt(0)}</span>
       </div>
 
       <p className="text-primary mt-1">{name}</p>
-      <p className="text-xs text-primary">{id}</p>
+      <p className="text-xs text-negative">{id}</p>
 
-      <div className="mx-3 my-2">
+      <div className="my-2">
         {isCancel ? (
-          <button className="text-xs bg-green-400 hover:bg-green-900 text-white font-bold py-1.5 px-4 rounded">
-            Join
+          <button className="text-xs bg-active text-white font-bold py-1.5 px-8 rounded-full focus:outline-none focus:shadow-outline">
+            JOIN
           </button>
         ) : (
-          <button className="text-xs bg-gray-500 hover:bg-gray-700 text-white font-bold py-1.5 px-4 rounded">
-            Cancel
+          <button className="text-xs bg-negative text-white font-bold py-1.5 px-6 rounded-full focus:outline-none focus:shadow-outline">
+            CANCEL
           </button>
         )}
       </div>
