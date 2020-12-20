@@ -1,32 +1,24 @@
-// import { Layout } from "src/components/layout";
+import React from "react";
+import { SampleButton } from "src/components/atoms/common/buttons/SampleButton";
+import { Layout } from "src/components/layout";
 import { Member } from "src/components/organisms/common/Member";
 
 const Home = () => {
-  // return (
-  //   <Layout>
-  //     <button
-  //       className="btn-blue"
-  //       onClick={() => {
-  //         window.alert("Hello, World!");
-  //       }}
-  //     >
-  //       Button
-  //     </button>
-  //     <SampleButton onClick={onClickSampleButton}>ボタン</SampleButton>
-  //   </Layout>
-  // );
-
+  const onClickSampleButton = () => {
+    alert();
+  };
   return (
-    <>
-      <div className="flex flex-row">
-        <Member name="そるてぃ" id="solty_919" isCancel={true} />
-        <Member name="みずさん" id="mizusima" isCancel={false} />
-        <Member name="そるてぃ" id="solty_919" isCancel={true} />
-        <Member name="みずさん" id="mizusima" isCancel={false} />
-        <Member name="そるてぃ" id="solty_919" isCancel={true} />
-        <Member name="みずさん" id="mizusima" isCancel={false} />
-      </div>
-    </>
+    <Layout>
+      <button
+        className="btn-blue"
+        onClick={() => {
+          window.alert("Hello, World!");
+        }}
+      >
+        Button
+      </button>
+      <SampleButton onClick={onClickSampleButton}>ボタン</SampleButton>
+    </Layout>
   );
 };
 
