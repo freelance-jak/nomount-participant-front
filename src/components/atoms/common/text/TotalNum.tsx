@@ -6,7 +6,7 @@ export const TotalNum = (props: Props) => {
   const { totalNum } = props;
   return (
     <p>
-      Total <span className="font-bold text-2xl">{totalNum}</span>
+      Total <span className="font-bold text-3xl">{totalNum}</span>
     </p>
   );
 };
