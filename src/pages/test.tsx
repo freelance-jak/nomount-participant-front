@@ -1,4 +1,6 @@
 import { SampleButton } from "src/components/atoms/common/buttons/SampleButton";
+import { ScrollContainer } from "src/components/atoms/common/container/ScrollContainer";
+import { PageTitle } from "src/components/atoms/common/text/PageTitle";
 import { Layout } from "src/components/layout";
 import { UserListContainer } from "src/components/organisms/common/container/UserListContainer";
 
@@ -90,7 +92,7 @@ const Test = () => {
   ];
   return (
     <Layout>
-      <p>ここにコンポーネントをテストで表示する</p>
+      <PageTitle>2020 JANUARY</PageTitle>
       <SampleButton onClick={onClickSampleButton}>ボタン</SampleButton>
       <UserListContainer userList={UserList} />
     </Layout>
