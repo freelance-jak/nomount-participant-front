@@ -94,9 +94,7 @@ const Test = () => {
     <Layout>
       <PageTitle>2020 JANUARY</PageTitle>
       <SampleButton onClick={onClickSampleButton}>ボタン</SampleButton>
-      <ScrollContainer height={"300px"}>
-        <UserListContainer userList={UserList} />
-      </ScrollContainer>
+      <UserListContainer userList={UserList} />
     </Layout>
   );
 };
