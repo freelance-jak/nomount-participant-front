@@ -1,5 +1,4 @@
 import { SampleButton } from "src/components/atoms/common/buttons/SampleButton";
-import { ScrollContainer } from "src/components/atoms/common/container/ScrollContainer";
 import { Layout } from "src/components/layout";
 import { UserListContainer } from "src/components/organisms/common/container/UserListContainer";
 
@@ -93,9 +92,7 @@ const Test = () => {
     <Layout>
       <p>ここにコンポーネントをテストで表示する</p>
       <SampleButton onClick={onClickSampleButton}>ボタン</SampleButton>
-      <ScrollContainer height={"300px"}>
-        <UserListContainer userList={UserList} />
-      </ScrollContainer>
+      <UserListContainer userList={UserList} />
     </Layout>
   );
 };
