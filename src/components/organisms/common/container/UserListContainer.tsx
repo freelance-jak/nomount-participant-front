@@ -9,6 +9,7 @@ type Props = {
 
 export const UserListContainer = (props: Props) => {
   const { title, userList } = props;
+
   return (
     <>
       <div className="mb-20">
@@ -21,12 +22,18 @@ export const UserListContainer = (props: Props) => {
         </div>
 
         <ScrollContainer height={"460px"}>
-          <ul className="grid grid-cols-7 gap-x-5 gap-y-5">
-            {userList.map((user) => {
-              return <Member key={user.id} name={user.name} id={user.id} isCancel={user.isCancel}></Member>;
+          <ul className="grid grid-cols-6 gap-x-5 gap-y-5 bg-gray-50 p-4">
+            {userList.map((user, index) => {
+              return <Member key={user.id} name={user.name} id={user.id} isCancel={index % 2 == 0}></Member>;
             })}
           </ul>
         </ScrollContainer>
+        <div className="flex justify-end mt-3">
+          <span>キャンセルモードへ切り替える</span>
+          <div className="h-7 w-7 ml-2 cursor-pointer">
+            <img src="/icon_refresh.png" alt="" />
+          </div>
+        </div>
       </div>
     </>
   );
