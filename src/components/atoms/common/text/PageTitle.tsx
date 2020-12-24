@@ -4,7 +4,7 @@ type Props = {
   children: ReactChild;
 };
 
-export const MonthTitle = (props: Props) => {
+export const PageTitle = (props: Props) => {
   const { children } = props;
   return <h2 className="text-5xl">{children}</h2>;
 };

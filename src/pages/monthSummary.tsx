@@ -1,5 +1,5 @@
 import { EventDate } from "src/components/atoms/common/text/EventDate";
-import { MonthTitle } from "src/components/atoms/common/text/MonthTitle";
+import { PageTitle } from "src/components/atoms/common/text/PageTitle";
 import { Layout } from "src/components/layout";
 import { UserListContainer } from "src/components/organisms/common/container/UserListContainer";
 
@@ -13,7 +13,7 @@ const MonthSummary = () => {
   return (
     <Layout>
       <div className="p-10 pr-28">
-        <MonthTitle>2020 JANUARY</MonthTitle>
+        <PageTitle>2020 JANUARY</PageTitle>
         <EventDate>開催日：2020.1.12</EventDate>
         <UserListContainer title="APPLY" userList={sample} />
         <UserListContainer title="JOINING" userList={sample} />
