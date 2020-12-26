@@ -1,7 +1,7 @@
 export const Footer = () => {
   return (
-    <footer>
-      <small>&copy; 20xx example</small>
+    <footer className="flex justify-end mr-3">
+      <small>&copy; Nomount Meet</small>
     </footer>
   );
 };
