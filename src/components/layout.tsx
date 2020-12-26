@@ -4,7 +4,7 @@ import { SideMenu } from "src/components/organisms/SideMenu";
 
 export const Layout = (props: { children: ReactNode }) => {
   return (
-    <div className="flex flex-row">
+    <div className="flex">
       <SideMenu />
       <div>
         <main>{props.children}</main>
