@@ -1,9 +1,14 @@
 import "react-pro-sidebar/dist/css/styles.css";
 
+import Router from "next/router";
 import { Menu, MenuItem, ProSidebar, SubMenu } from "react-pro-sidebar";
 import { MenuTitle } from "src/components/molecules/common/MenuTitle";
 
 export const SideMenu = () => {
+  const onClickMenu = (path: string) => {
+    Router.push(path);
+  };
+
   return (
     <div>
       <div className="sticky top-0 h-screen">
@@ -17,8 +22,8 @@ export const SideMenu = () => {
               <MenuItem>2021/04</MenuItem>
               <MenuItem>2021/05</MenuItem>
             </SubMenu>
-            <MenuItem>RANKING</MenuItem>
-            <MenuItem>CANCEL LIST</MenuItem>
+            <MenuItem>{<button onClick={() => onClickMenu("/ranking")}>RANKING</button>}</MenuItem>
+            <MenuItem>{<button onClick={() => onClickMenu("/cancels")}>CANCEL LIST</button>}</MenuItem>
           </Menu>
         </ProSidebar>
       </div>

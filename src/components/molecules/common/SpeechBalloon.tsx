@@ -11,7 +11,7 @@ export const SpeechBalloon = (props: Props) => {
         height="32.545"
         viewBox="0 0 37 32.545"
         onClick={props.onClick}
-        className="cursor-pointer transition duration-500 ease-in-out transform hover:-translate-1 hover:scale-110"
+        className="cursor-pointer transition duration-500 transform hover:scale-110"
       >
         <g id="合体_1" data-name="合体 1" transform="translate(2307 78)" fill="#fff">
           <path
