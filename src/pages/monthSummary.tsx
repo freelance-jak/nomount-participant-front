@@ -12,7 +12,7 @@ const MonthSummary = () => {
 
   return (
     <Layout>
-      <div className="p-10 pr-28">
+      <div className="py-6 px-10">
         <PageTitle>2020 JANUARY</PageTitle>
         <EventDate>開催日：2020.1.12</EventDate>
         <UserListContainer title="APPLY" userList={sample} />
