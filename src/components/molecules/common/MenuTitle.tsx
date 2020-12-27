@@ -5,7 +5,7 @@ type Props = {
 export const MenuTitle = (props: Props) => {
   const { onClickTitle } = props;
   return (
-    <button onClick={onClickTitle}>
+    <button onClick={onClickTitle} className="focus:outline-none">
       <div className="flex items-center">
         <div>
           <img
