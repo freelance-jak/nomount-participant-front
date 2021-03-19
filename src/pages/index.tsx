@@ -15,6 +15,9 @@ const Home = () => {
   const onClickMenu = (path: string) => {
     Router.push(path);
   };
+  const redirectToOtherPage = (url: string) => {
+    window.location.href = url;
+  };
 
   return (
     <div className="text-center pt-40 m-auto">
@@ -24,7 +27,11 @@ const Home = () => {
       </div>
       <div className="pt-20 flex justify-center space-x-10 > *">
         <DashboardMenu src="/icon_meet.png" title="MEET" onClick={() => onClickMenu("/monthSummary")} />
-        <DashboardMenu src="/icon_shuffle.png" title="SHUFFLE" onClick={() => alert()} />
+        <DashboardMenu
+          src="/icon_shuffle.png"
+          title="SHUFFLE"
+          onClick={() => redirectToOtherPage("https://nomount-shuffle.vercel.app")}
+        />
         <DashboardMenu src="/icon_team.png" title="TEAM" onClick={() => alert()} />
         <DashboardMenu src="/icon_list.png" title="コレスル" onClick={() => alert()} />
       </div>
