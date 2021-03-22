@@ -4,7 +4,7 @@ import { Layout } from "src/components/layout";
 import { UserListContainer } from "src/components/organisms/common/container/UserListContainer";
 
 const MonthSummary = () => {
-  const sample = Array(70).fill({
+  const sample = Array(20).fill({
     name: "みずさん",
     id: "mizushima",
     isCancel: false,
