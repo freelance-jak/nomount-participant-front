@@ -10,7 +10,7 @@ export const DashboardMenu = (props: Props) => {
   const { src, title, onClick } = props;
   return (
     <div>
-      <Image className="cursor-pointer hover:opacity-90" src={src} width={80} height={80} onClick={onClick} />
+      <Image className="hover:opacity-90 cursor-pointer" src={src} width={80} height={80} onClick={onClick} />
       <p>{title}</p>
     </div>
   );

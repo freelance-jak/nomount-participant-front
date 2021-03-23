@@ -12,15 +12,15 @@ export const TopMenu = () => {
   };
 
   return (
-    <div className="flex flex-row p-2 justify-between">
+    <div className="flex flex-row justify-between p-2">
       <MenuTitle onClickTitle={() => onClickMenu("/")} />
       <button
         onClick={() => setOpen(!isOpen)}
-        className="flex justify-center items-center px-4 py-2 focus:outline-none"
+        className="flex items-center justify-center px-4 py-2 focus:outline-none"
       >
         Menu
         <svg
-          className="-mr-1 ml-2 h-5 w-5"
+          className="-mr-1 ml-2 w-5 h-5"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
           fill="currentColor"
@@ -34,7 +34,7 @@ export const TopMenu = () => {
         </svg>
       </button>
       <Transition
-        className="absolute right-0 mt-12 w-52 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5"
+        className="absolute right-0 mt-12 w-52 bg-white rounded-md shadow-lg ring-black ring-opacity-5 ring-1"
         show={isOpen}
         enter="transition ease-out duration-100"
         enterFrom="transform opacity-0 scale-95"
@@ -45,13 +45,13 @@ export const TopMenu = () => {
       >
         <div className="">
           <div className="py-3">
-            <button onClick={() => setMeetOpen(!isMeetOpen)} className="text-left w-full px-4 py-2 text-sm">
+            <button onClick={() => setMeetOpen(!isMeetOpen)} className="px-4 py-2 w-full text-left text-sm">
               MEET
             </button>
-            <button onClick={() => onClickMenu("/ranking")} className="text-left w-full block px-4 py-2 text-sm">
+            <button onClick={() => onClickMenu("/ranking")} className="block px-4 py-2 w-full text-left text-sm">
               RANKING
             </button>
-            <button onClick={() => onClickMenu("/cancelList")} className="text-left w-full block px-4 py-2 text-sm">
+            <button onClick={() => onClickMenu("/cancelList")} className="block px-4 py-2 w-full text-left text-sm">
               CANCEL LIST
             </button>
           </div>
@@ -60,5 +60,5 @@ export const TopMenu = () => {
     </div>
   );
 
-  return <div className="p-2 justify-between">{<MenuTitle onClickTitle={() => onClickMenu("/")} />}</div>;
+  return <div className="justify-between p-2">{<MenuTitle onClickTitle={() => onClickMenu("/")} />}</div>;
 };

@@ -6,5 +6,5 @@ type Props = {
 
 export const EventDate = (props: Props) => {
   const { children } = props;
-  return <h3 className="text-sm mt-5 mb-32 text-negative">{children}</h3>;
+  return <h3 className="mb-32 mt-5 text-negative text-sm">{children}</h3>;
 };

@@ -20,12 +20,12 @@ const Home = () => {
   };
 
   return (
-    <div className="text-center pt-40 m-auto">
+    <div className="m-auto pt-40 text-center">
       <Image src="/nomountapp_logo.png" width={460} height={50} />
       <div className="pt-12 px-10">
         <SearchInput value={searchText} placeholder="Search for apps" onChange={onChangeSearchText} />
       </div>
-      <div className="pt-20 flex justify-center space-x-10 > *">
+      <div className="> flex justify-center pt-20 * space-x-10">
         <DashboardMenu src="/icon_meet.png" title="MEET" onClick={() => onClickMenu("/monthSummary")} />
         <DashboardMenu
           src="/icon_shuffle.png"
@@ -35,7 +35,7 @@ const Home = () => {
         <DashboardMenu src="/icon_team.png" title="TEAM" onClick={() => alert()} />
         <DashboardMenu src="/icon_list.png" title="コレスル" onClick={() => alert()} />
       </div>
-      <div className="pt-8 flex justify-center space-x-10 > *">
+      <div className="> flex justify-center pt-8 * space-x-10">
         <DashboardMenu src="/icon_team.png" title="TEAM" onClick={() => alert()} />
         <DashboardMenu src="/icon_meet.png" title="MEET" onClick={() => alert()} />
         <DashboardMenu src="/icon_list.png" title="コレスル" onClick={() => alert()} />
