@@ -7,11 +7,12 @@ import type { Member as TMember } from "src/types/member";
 type Props = {
   title: string;
   userList: TMember[];
+  onReload: () => void;
 };
 
 export const UserListContainer = (props: Props) => {
-  const { title, userList } = props;
-  const [isCancelMode, setCancelMode] = useState(false);
+  const { title, userList, onReload } = props;
+  const [isCancelMode, setCancelMode] = useState(true);
 
   const onClickCancelMode = () => {
     setCancelMode(!isCancelMode);
@@ -31,7 +32,7 @@ export const UserListContainer = (props: Props) => {
         {/* <ScrollContainer height={"460px"}> 一時的にスクロール非表示*/}
         <ul className="grid gap-5 grid-cols-3 p-4 bg-gray-50 lg:grid-cols-5 xl:grid-cols-7">
           {userList.map((user) => {
-            return <Member key={user.id} name={user.name} id={user.id} isCancel={isCancelMode}></Member>;
+            return <Member key={user.id} member={user} isCancelMode={isCancelMode} onReload={onReload}></Member>;
           })}
         </ul>
         {/* </ScrollContainer> */}
