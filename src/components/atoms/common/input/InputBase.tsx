@@ -15,7 +15,7 @@ export const InputBase = (props: Props) => {
 
   return (
     <input
-      className="w-full py-4 px-7 text-gray-500 border outline-none shadow-md"
+      className="px-7 py-4 w-full text-gray-500 border outline-none shadow-md"
       type="text"
       placeholder={placeholder}
       style={style}

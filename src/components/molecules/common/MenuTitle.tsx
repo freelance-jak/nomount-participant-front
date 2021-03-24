@@ -11,12 +11,12 @@ export const MenuTitle = (props: Props) => {
           <img
             src="/icon_meet.png"
             alt=""
-            className="transition duration-1000 transform hover:rotate-180 h-12 w-12 sm:h-20 sm:w-20"
+            className="w-12 h-12 transform hover:rotate-180 transition duration-1000 sm:w-20 sm:h-20"
           />
         </div>
 
-        <div className="flex sm:flex-col justify-center text-center ml-3">
-          <p className="text-lg  mr-1 sm:text-xl sm:mr-0">No-Mount</p>
+        <div className="flex justify-center ml-3 text-center sm:flex-col">
+          <p className="mr-1 text-lg sm:mr-0 sm:text-xl">No-Mount</p>
           <p className="text-lg sm:text-4xl">MEET</p>
         </div>
       </div>
