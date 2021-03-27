@@ -1,16 +1,26 @@
+import { useState } from "react";
+
 type Props = {
-  onClick: () => void;
+  comment: string;
 };
 
 export const SpeechBalloon = (props: Props) => {
+  const { comment } = props;
+  const [isMoudeOver, setMouseOver] = useState(false);
+  const onMouse = (hover: boolean) => {
+    setMouseOver(hover);
+  };
+  const onClick = () => {
+    setMouseOver(!isMoudeOver);
+  };
   return (
-    <>
+    <div onMouseEnter={() => onMouse(true)} onMouseLeave={() => onMouse(false)} className="relative">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="37"
         height="32.545"
         viewBox="0 0 37 32.545"
-        onClick={props.onClick}
+        onClick={onClick}
         className="cursor-pointer transform hover:scale-110 transition duration-500"
       >
         <g id="合体_1" data-name="合体 1" transform="translate(2307 78)" fill="#fff">
@@ -52,6 +62,9 @@ export const SpeechBalloon = (props: Props) => {
           fill="#707070"
         />
       </svg>
-    </>
+      {isMoudeOver && (
+        <div className="absolute -top-full p-3 bg-white border border-current rounded-lg shadow-lg">{comment}</div>
+      )}
+    </div>
   );
 };
