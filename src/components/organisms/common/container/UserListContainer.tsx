@@ -1,5 +1,5 @@
 // import { ScrollContainer } from "src/components/atoms/common/container/ScrollContainer";
-import React, { useState } from "react";
+import { useState } from "react";
 import { ScrollContainer } from "src/components/atoms/common/container/ScrollContainer";
 import { ChangeMode } from "src/components/molecules/common/ChangeMode";
 import { Member } from "src/components/organisms/common/Member";

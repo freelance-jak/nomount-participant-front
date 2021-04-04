@@ -8,9 +8,9 @@ import type { Member } from "src/types/member";
 const MonthSummary = () => {
   const dummy: Member[] = Array(20)
     .fill(null)
-    .map(() => ({
+    .map((_, index) => ({
       name: "みずさん",
-      id: "mizushima",
+      id: "mizushima" + index.toString(),
     }));
 
   const [sample, setSamples] = useState(dummy);
