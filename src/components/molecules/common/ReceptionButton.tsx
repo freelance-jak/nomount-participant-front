@@ -1,7 +1,7 @@
 type Props = {
-  isJoining?: boolean;
+  isJoining: boolean | null;
   isCancelMode: boolean;
-  onClick: (value: boolean | null) => void;
+  onClick: (join: boolean | null) => void;
 };
 
 const ReceptionButton = (props: Props) => {

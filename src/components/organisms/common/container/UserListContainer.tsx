@@ -1,6 +1,4 @@
-// import { ScrollContainer } from "src/components/atoms/common/container/ScrollContainer";
 import { useState } from "react";
-import { ScrollContainer } from "src/components/atoms/common/container/ScrollContainer";
 import { ChangeMode } from "src/components/molecules/common/ChangeMode";
 import { Member } from "src/components/organisms/common/Member";
 import type { Member as TMember } from "src/types/member";
@@ -30,7 +28,6 @@ export const UserListContainer = (props: Props) => {
           </div>
         </div>
 
-        {/* <ScrollContainer height={"460px"}> */}
         <ul className="grid gap-5 grid-cols-3 p-4 bg-gray-50 rounded-lg shadow-md lg:grid-cols-5 xl:grid-cols-7">
           {userList.length == 0 ? (
             <p className="p-4 text-gray-500">No Member.</p>
@@ -40,7 +37,6 @@ export const UserListContainer = (props: Props) => {
             })
           )}
         </ul>
-        {/* </ScrollContainer> */}
 
         <ChangeMode onClick={onClickCancelMode} />
       </div>

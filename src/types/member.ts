@@ -1,5 +1,5 @@
 export type Member = {
   id: string;
   name: string;
-  isJoining?: boolean;
+  isJoining: boolean | null;
 };

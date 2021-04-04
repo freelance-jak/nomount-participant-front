@@ -10,7 +10,7 @@ type Props = {
 
 export const Member = (props: Props) => {
   const { member, isCancelMode, onReload } = props;
-  const onClick = (join?: boolean) => {
+  const onClick = (join: boolean | null) => {
     member.isJoining = join;
     onReload();
   };
