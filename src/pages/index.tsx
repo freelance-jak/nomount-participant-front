@@ -33,7 +33,11 @@ const Home = () => {
           onClick={() => redirectToOtherPage("https://nomount-shuffle.vercel.app")}
         />
         <DashboardMenu src="/icon_team.png" title="TEAM" onClick={() => alert()} />
-        <DashboardMenu src="/icon_list.png" title="コレスル" onClick={() => alert()} />
+        <DashboardMenu
+          src="/icon_list.png"
+          title="コレスル"
+          onClick={() => redirectToOtherPage("https://koresuru-test.vercel.app/")}
+        />
       </div>
       <div className="> flex justify-center pt-8 * space-x-10">
         <DashboardMenu src="/icon_team.png" title="TEAM" onClick={() => alert()} />
