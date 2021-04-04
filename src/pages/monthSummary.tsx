@@ -9,6 +9,7 @@ const MonthSummary = () => {
   const dummy: Member[] = Array(20)
     .fill(null)
     .map((_, index) => ({
+      isJoining: null,
       name: "みずさん",
       id: "mizushima" + index.toString(),
     }));
