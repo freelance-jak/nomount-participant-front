@@ -6,15 +6,13 @@ type Props = {
 
 export const SpeechBalloon = (props: Props) => {
   const { comment } = props;
-  const [isMoudeOver, setMouseOver] = useState(false);
-  const onMouse = (hover: boolean) => {
-    setMouseOver(hover);
-  };
+  const [isShowComment, setIsShowComment] = useState(false);
+
   const onClick = () => {
-    setMouseOver(!isMoudeOver);
+    setIsShowComment(!isShowComment);
   };
   return (
-    <div onMouseEnter={() => onMouse(true)} onMouseLeave={() => onMouse(false)} className="relative">
+    <div className="relative">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="37"
@@ -62,8 +60,8 @@ export const SpeechBalloon = (props: Props) => {
           fill="#707070"
         />
       </svg>
-      {isMoudeOver && (
-        <div className="absolute -top-full p-3 bg-white border border-current rounded-lg shadow-lg">{comment}</div>
+      {isShowComment && (
+        <div className="absolute z-20 p-3 w-64 bg-white border border-current rounded-lg shadow-lg">{comment}</div>
       )}
     </div>
   );
