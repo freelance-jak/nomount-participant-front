@@ -11,8 +11,9 @@ export const SpeechBalloon = (props: Props) => {
   const onClick = () => {
     setIsShowComment(!isShowComment);
   };
-  return (
-    <div className="relative">
+
+  const baloonSvg = () => {
+    return (
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="37"
@@ -60,8 +61,16 @@ export const SpeechBalloon = (props: Props) => {
           fill="#707070"
         />
       </svg>
+    );
+  };
+
+  return (
+    <div>
+      {baloonSvg()}
       {isShowComment && (
-        <div className="absolute z-20 p-3 w-64 bg-white border border-current rounded-lg shadow-lg">{comment}</div>
+        <div className="absolute z-20 mt-2 p-3 w-64 bg-white border-2 border-current rounded-lg shadow-xl">
+          {comment}
+        </div>
       )}
     </div>
   );
