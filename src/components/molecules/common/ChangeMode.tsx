@@ -6,7 +6,7 @@ export const ChangeMode = (props: Props) => {
   const { onClick } = props;
   return (
     <div className="flex justify-end">
-      <button className="focus:outline-none" onClick={() => onClick()}>
+      <button className="focus:outline-none" onClick={onClick}>
         <div className="flex mt-3">
           <span>モード切り替え</span>
           <div className="ml-2 w-7 h-7">

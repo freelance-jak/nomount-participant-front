@@ -16,7 +16,7 @@ const MonthSummary = () => {
 
   const [sample, setSamples] = useState(dummy);
   const onReload = () => {
-    setSamples(sample.slice());
+    setSamples([...sample]);
   };
 
   return (
