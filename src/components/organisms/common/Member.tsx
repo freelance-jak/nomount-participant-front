@@ -1,13 +1,20 @@
+import ReceptionButton from "src/components/molecules/common/ReceptionButton";
 import { SpeechBalloon } from "src/components/molecules/common/SpeechBalloon";
+import type { Member as TMember } from "src/types/member";
 
 type Props = {
-  name: string;
-  id: string;
-  isCancel: boolean;
+  member: TMember;
+  isCancelMode: boolean;
+  onReload: () => void;
 };
 
 export const Member = (props: Props) => {
-  const { name, id, isCancel } = props;
+  const { member, isCancelMode, onReload } = props;
+  const onClick = (join: boolean | null) => {
+    member.isJoining = join;
+    onReload();
+  };
+
   return (
     <div className="flex flex-col flex-wrap content-center justify-center px-4 py-3 text-center text-primary">
       <div className="relative flex flex-wrap content-center justify-center w-24 h-24 border-2 border-solid border-primary rounded-full">
@@ -18,23 +25,13 @@ export const Member = (props: Props) => {
             }}
           />
         </div>
-        <span className="text-primary text-3xl">{id.toUpperCase().charAt(0)}</span>
+        <span className="text-primary text-3xl">{member.id.toUpperCase().charAt(0)}</span>
       </div>
 
-      <p className="mt-1 text-primary">{name}</p>
-      <p className="text-negative text-xs">{id}</p>
+      <p className="mt-1 text-primary">{member.name}</p>
+      <p className="text-negative text-xs">{member.id}</p>
 
-      <div className="my-2">
-        {isCancel ? (
-          <button className="focus:shadow-outline px-8 py-1.5 text-white text-xs font-bold bg-active rounded-full focus:outline-none">
-            JOIN
-          </button>
-        ) : (
-          <button className="focus:shadow-outline px-6 py-1.5 text-white text-xs font-bold bg-negative rounded-full focus:outline-none">
-            CANCEL
-          </button>
-        )}
-      </div>
+      <ReceptionButton isJoining={member.isJoining} isCancelMode={isCancelMode} onClick={onClick} />
     </div>
   );
 };
