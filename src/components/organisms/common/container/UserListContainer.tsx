@@ -1,14 +1,21 @@
-// import { ScrollContainer } from "src/components/atoms/common/container/ScrollContainer";
+import { useState } from "react";
+import { ChangeMode } from "src/components/molecules/common/ChangeMode";
 import { Member } from "src/components/organisms/common/Member";
 import type { Member as TMember } from "src/types/member";
 
 type Props = {
   title: string;
   userList: TMember[];
+  onReload: () => void;
 };
 
 export const UserListContainer = (props: Props) => {
-  const { title, userList } = props;
+  const { title, userList, onReload } = props;
+  const [isCancelMode, setCancelMode] = useState(false);
+
+  const onClickCancelMode = () => {
+    setCancelMode(!isCancelMode);
+  };
 
   return (
     <>
@@ -21,19 +28,17 @@ export const UserListContainer = (props: Props) => {
           </div>
         </div>
 
-        {/* <ScrollContainer height={"460px"}> 一時的にスクロール非表示*/}
-        <ul className="grid gap-5 grid-cols-3 p-4 bg-gray-50 lg:grid-cols-5 xl:grid-cols-7">
-          {userList.map((user, index) => {
-            return <Member key={user.id} name={user.name} id={user.id} isCancel={index % 2 == 0}></Member>;
-          })}
+        <ul className="grid gap-5 grid-cols-3 p-4 bg-gray-50 rounded-lg shadow-md lg:grid-cols-5 xl:grid-cols-7">
+          {userList.length == 0 ? (
+            <p className="p-4 text-gray-500">No Member.</p>
+          ) : (
+            userList.map((user) => {
+              return <Member key={user.id} member={user} isCancelMode={isCancelMode} onReload={onReload}></Member>;
+            })
+          )}
         </ul>
-        {/* </ScrollContainer> */}
-        <div className="flex justify-end mt-3">
-          <span>キャンセルモードへ切り替える</span>
-          <div className="ml-2 w-7 h-7 cursor-pointer">
-            <img src="/icon_refresh.png" alt="" />
-          </div>
-        </div>
+
+        <ChangeMode onClick={onClickCancelMode} />
       </div>
     </>
   );
