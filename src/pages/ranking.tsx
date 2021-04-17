@@ -1,9 +1,13 @@
+import ReactTooltip from "react-tooltip";
 import { Layout } from "src/components/layout";
 
 const Ranking = () => {
   return (
     <Layout>
-      <h1>Ranking</h1>
+      <button data-tip="2" className="focus:outline-none">
+        aaa
+        <ReactTooltip className="bg-red" place="right" />
+      </button>
     </Layout>
   );
 };

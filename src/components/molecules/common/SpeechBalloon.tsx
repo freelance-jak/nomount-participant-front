@@ -1,4 +1,4 @@
-import { useState } from "react";
+import ReactTooltip from "react-tooltip";
 
 type Props = {
   comment: string;
@@ -6,11 +6,6 @@ type Props = {
 
 export const SpeechBalloon = (props: Props) => {
   const { comment } = props;
-  const [isShowComment, setIsShowComment] = useState(false);
-
-  const onClick = () => {
-    setIsShowComment(!isShowComment);
-  };
 
   const baloonSvg = () => {
     return (
@@ -19,7 +14,6 @@ export const SpeechBalloon = (props: Props) => {
         width="37"
         height="32.545"
         viewBox="0 0 37 32.545"
-        onClick={onClick}
         className="cursor-pointer transform hover:scale-110 transition duration-500"
       >
         <g id="合体_1" data-name="合体 1" transform="translate(2307 78)" fill="#fff">
@@ -65,13 +59,13 @@ export const SpeechBalloon = (props: Props) => {
   };
 
   return (
-    <div>
-      {baloonSvg()}
-      {isShowComment && (
-        <div className="absolute z-20 mt-2 p-3 w-64 bg-white border-2 border-current rounded-lg shadow-xl">
-          {comment}
-        </div>
-      )}
-    </div>
+    <>
+      <button data-tip data-for="speechBalloon" className="focus:outline-none">
+        {baloonSvg()}
+      </button>
+      <ReactTooltip id="speechBalloon" type="dark">
+        <span>comment</span>
+      </ReactTooltip>
+    </>
   );
 };
