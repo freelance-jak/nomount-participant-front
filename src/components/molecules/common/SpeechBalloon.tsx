@@ -1,3 +1,5 @@
+import dynamic from "next/dynamic";
+import { useEffect } from "react";
 import ReactTooltip from "react-tooltip";
 
 type Props = {
@@ -6,6 +8,14 @@ type Props = {
 
 export const SpeechBalloon = (props: Props) => {
   const { comment } = props;
+
+  // SSRされるとうまく動かないためクライアント側で読み込まれるように設定
+  const DynamicReactTooltip = dynamic(() => import("react-tooltip"), { ssr: false });
+
+  // クライアント側で読み込まれた後にリビルドをかけて再構築することで正常に動く
+  useEffect(() => {
+    ReactTooltip.rebuild();
+  }, []);
 
   const baloonSvg = () => {
     return (
@@ -63,9 +73,9 @@ export const SpeechBalloon = (props: Props) => {
       <button data-tip data-for="speechBalloon" className="focus:outline-none">
         {baloonSvg()}
       </button>
-      <ReactTooltip id="speechBalloon" type="dark">
-        <span>comment</span>
-      </ReactTooltip>
+      <DynamicReactTooltip id="speechBalloon" type="dark">
+        <span>{comment}</span>
+      </DynamicReactTooltip>
     </>
   );
 };
