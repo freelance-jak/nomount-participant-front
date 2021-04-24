@@ -4,10 +4,14 @@ import { Layout } from "src/components/layout";
 const Ranking = () => {
   return (
     <Layout>
-      <button data-tip="2" className="focus:outline-none">
-        aaa
-        <ReactTooltip className="bg-red" place="right" />
+      <br />
+      <br />
+      <button data-tip data-for="speechBalloon" className="focus:outline-none">
+        <p>ssssssssss</p>
       </button>
+      <ReactTooltip id="speechBalloon" type="dark">
+        <span>comment</span>
+      </ReactTooltip>
     </Layout>
   );
 };
