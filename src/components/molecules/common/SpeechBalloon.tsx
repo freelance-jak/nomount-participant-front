@@ -1,16 +1,21 @@
+import dynamic from "next/dynamic";
+// SSRされるとうまく動かないためクライアント側で読み込まれるように設定
+const DynamicReactTooltip = dynamic(() => import("react-tooltip"), { ssr: false });
+
 type Props = {
-  onClick: () => void;
+  comment: string;
 };
 
 export const SpeechBalloon = (props: Props) => {
-  return (
-    <>
+  const { comment } = props;
+
+  const baloonSvg = () => {
+    return (
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="37"
         height="32.545"
         viewBox="0 0 37 32.545"
-        onClick={props.onClick}
         className="cursor-pointer transform hover:scale-110 transition duration-500"
       >
         <g id="合体_1" data-name="合体 1" transform="translate(2307 78)" fill="#fff">
@@ -52,6 +57,17 @@ export const SpeechBalloon = (props: Props) => {
           fill="#707070"
         />
       </svg>
+    );
+  };
+
+  return (
+    <>
+      <button data-tip data-for="speechBalloon" className="focus:outline-none">
+        {baloonSvg()}
+      </button>
+      <DynamicReactTooltip id="speechBalloon" type="dark">
+        <span>{comment}</span>
+      </DynamicReactTooltip>
     </>
   );
 };

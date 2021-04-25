@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 type Props = {
   onClickTitle: () => void;
 };
@@ -8,10 +10,12 @@ export const MenuTitle = (props: Props) => {
     <button onClick={onClickTitle} className="focus:outline-none">
       <div className="flex items-center">
         <div>
-          <img
+          <Image
             src="/icon_meet.png"
-            alt=""
-            className="w-12 h-12 transform hover:rotate-180 transition duration-1000 sm:w-20 sm:h-20"
+            alt="アイコン"
+            width={80}
+            height={80}
+            className="transform hover:rotate-180 transition duration-1000"
           />
         </div>
 
