@@ -2,6 +2,7 @@ import { useState } from "react";
 import { EventDate } from "src/components/atoms/common/text/EventDate";
 import { PageTitle } from "src/components/atoms/common/text/PageTitle";
 import { Layout } from "src/components/layout";
+import FinishButton from "src/components/molecules/common/FinishButton";
 import { UserListContainer } from "src/components/organisms/common/container/UserListContainer";
 import type { Member } from "src/types/member";
 
@@ -39,6 +40,7 @@ const MonthSummary = () => {
           userList={sample.filter((value) => value.isJoining == false)}
           onReload={onReload}
         />
+        <FinishButton />
       </div>
     </Layout>
   );
