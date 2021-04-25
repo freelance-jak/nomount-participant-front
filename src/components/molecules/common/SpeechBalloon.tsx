@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
-import { useEffect } from "react";
-import ReactTooltip from "react-tooltip";
+// SSRされるとうまく動かないためクライアント側で読み込まれるように設定
+const DynamicReactTooltip = dynamic(() => import("react-tooltip"), { ssr: false });
 
 type Props = {
   comment: string;
@@ -8,14 +8,6 @@ type Props = {
 
 export const SpeechBalloon = (props: Props) => {
   const { comment } = props;
-
-  // SSRされるとうまく動かないためクライアント側で読み込まれるように設定
-  const DynamicReactTooltip = dynamic(() => import("react-tooltip"), { ssr: false });
-
-  // クライアント側で読み込まれた後にリビルドをかけて再構築することで正常に動く
-  useEffect(() => {
-    ReactTooltip.rebuild();
-  }, []);
 
   const baloonSvg = () => {
     return (
