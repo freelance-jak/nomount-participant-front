@@ -3,18 +3,18 @@ import CancelButton from "src/components/atoms/common/buttons/CancelButton";
 import JoinButton from "src/components/atoms/common/buttons/JoinButton";
 
 type Props = {
-  isJoining: string;
+  status: string;
   isCancelMode: boolean;
   onClick: (join: string) => void;
 };
 
 const ReceptionButton = (props: Props) => {
-  const { isJoining, isCancelMode, onClick } = props;
+  const { status, isCancelMode, onClick } = props;
 
   return (
     <div className="my-2">
       {(() => {
-        switch (isJoining) {
+        switch (status) {
           case "wait":
             return isCancelMode ? <CancelButton onClick={onClick} /> : <JoinButton onClick={onClick} />;
           case "participate":

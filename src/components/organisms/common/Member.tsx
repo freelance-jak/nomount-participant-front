@@ -27,7 +27,7 @@ export const Member = (props: Props) => {
       <p className="mt-1 text-primary">{meet.member.name}</p>
       <p className="text-negative text-xs">{meet.member.connpassAccount}</p>
 
-      <ReceptionButton isJoining={meet.status} isCancelMode={isCancelMode} onClick={onClick} />
+      <ReceptionButton status={meet.status} isCancelMode={isCancelMode} onClick={onClick} />
     </div>
   );
 };
