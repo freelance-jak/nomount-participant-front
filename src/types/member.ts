@@ -1,5 +1,4 @@
 export type Member = {
-  id: string;
+  connpassAccount: string;
   name: string;
-  isJoining: boolean | null;
 };
