@@ -3,11 +3,11 @@ import dynamic from "next/dynamic";
 const DynamicReactTooltip = dynamic(() => import("react-tooltip"), { ssr: false });
 
 type Props = {
-  comment: string;
+  message: string;
 };
 
 export const SpeechBalloon = (props: Props) => {
-  const { comment } = props;
+  const { message } = props;
 
   const baloonSvg = () => {
     return (
@@ -62,12 +62,10 @@ export const SpeechBalloon = (props: Props) => {
 
   return (
     <>
-      <button data-tip data-for="speechBalloon" className="focus:outline-none">
+      <button data-tip={message} className="focus:outline-none">
         {baloonSvg()}
+        <DynamicReactTooltip />
       </button>
-      <DynamicReactTooltip id="speechBalloon" type="dark">
-        <span>{comment}</span>
-      </DynamicReactTooltip>
     </>
   );
 };

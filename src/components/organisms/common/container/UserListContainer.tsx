@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { ChangeMode } from "src/components/molecules/common/ChangeMode";
 import { Member } from "src/components/organisms/common/Member";
-import type { Member as TMember } from "src/types/member";
+import type { Meet } from "src/types/meet";
 
 type Props = {
   title: string;
-  userList: TMember[];
+  userList: Meet[];
   onReload: () => void;
 };
 
@@ -32,8 +32,15 @@ export const UserListContainer = (props: Props) => {
           {userList.length == 0 ? (
             <p className="p-4 text-gray-500">No Member.</p>
           ) : (
-            userList.map((user) => {
-              return <Member key={user.id} member={user} isCancelMode={isCancelMode} onReload={onReload}></Member>;
+            userList.map((meet) => {
+              return (
+                <Member
+                  key={meet.member.connpassAccount}
+                  meet={meet}
+                  isCancelMode={isCancelMode}
+                  onReload={onReload}
+                ></Member>
+              );
             })
           )}
         </ul>

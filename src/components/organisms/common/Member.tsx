@@ -1,17 +1,17 @@
 import ReceptionButton from "src/components/molecules/common/ReceptionButton";
 import { SpeechBalloon } from "src/components/molecules/common/SpeechBalloon";
-import type { Member as TMember } from "src/types/member";
+import type { Meet } from "src/types/meet";
 
 type Props = {
-  member: TMember;
+  meet: Meet;
   isCancelMode: boolean;
   onReload: () => void;
 };
 
 export const Member = (props: Props) => {
-  const { member, isCancelMode, onReload } = props;
-  const onClick = (join: boolean | null) => {
-    member.isJoining = join;
+  const { meet, isCancelMode, onReload } = props;
+  const onClick = (join: string) => {
+    meet.status = join;
     onReload();
   };
 
@@ -19,15 +19,15 @@ export const Member = (props: Props) => {
     <div className="flex flex-col flex-wrap content-center justify-center px-4 py-3 text-center text-primary">
       <div className="relative flex flex-wrap content-center justify-center w-24 h-24 border-2 border-solid border-primary rounded-full">
         <div className="absolute -right-0 -top-2">
-          <SpeechBalloon comment="今日は楽しみだなだなあ" />
+          <SpeechBalloon message={meet.message} />
         </div>
-        <span className="text-primary text-3xl">{member.id.toUpperCase().charAt(0)}</span>
+        <span className="text-primary text-3xl">{meet.member.connpassAccount.toUpperCase().charAt(0)}</span>
       </div>
 
-      <p className="mt-1 text-primary">{member.name}</p>
-      <p className="text-negative text-xs">{member.id}</p>
+      <p className="mt-1 text-primary">{meet.member.name}</p>
+      <p className="text-negative text-xs">{meet.member.connpassAccount}</p>
 
-      <ReceptionButton isJoining={member.isJoining} isCancelMode={isCancelMode} onClick={onClick} />
+      <ReceptionButton status={meet.status} isCancelMode={isCancelMode} onClick={onClick} />
     </div>
   );
 };

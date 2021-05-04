@@ -1,44 +1,30 @@
+import ApplyButton from "src/components/atoms/common/buttons/ApplyButton";
+import CancelButton from "src/components/atoms/common/buttons/CancelButton";
+import JoinButton from "src/components/atoms/common/buttons/JoinButton";
+
 type Props = {
-  isJoining: boolean | null;
+  status: string;
   isCancelMode: boolean;
-  onClick: (join: boolean | null) => void;
+  onClick: (join: string) => void;
 };
 
 const ReceptionButton = (props: Props) => {
-  const { isJoining, isCancelMode, onClick } = props;
+  const { status, isCancelMode, onClick } = props;
+
   return (
     <div className="my-2">
-      {isCancelMode ? (
-        isJoining || isJoining == null ? (
-          <button
-            onClick={() => onClick(false)}
-            className="focus:shadow-outline px-6 py-1.5 text-white text-xs font-bold bg-negative rounded-full focus:outline-none"
-          >
-            CANCEL
-          </button>
-        ) : (
-          <button
-            onClick={() => onClick(null)}
-            className="focus:shadow-outline px-6 py-1.5 text-red-500 text-xs font-bold border border-red-500 rounded-full focus:outline-none"
-          >
-            APPLY
-          </button>
-        )
-      ) : isJoining ? (
-        <button
-          onClick={() => onClick(null)}
-          className="focus:shadow-outline px-6 py-1.5 text-red-500 text-xs font-bold border border-red-500 rounded-full focus:outline-none"
-        >
-          APPLY
-        </button>
-      ) : (
-        <button
-          onClick={() => onClick(true)}
-          className="focus:shadow-outline px-8 py-1.5 text-white text-xs font-bold bg-active rounded-full focus:outline-none"
-        >
-          JOIN
-        </button>
-      )}
+      {(() => {
+        switch (status) {
+          case "wait":
+            return isCancelMode ? <CancelButton onClick={onClick} /> : <JoinButton onClick={onClick} />;
+          case "participate":
+            return isCancelMode ? <CancelButton onClick={onClick} /> : <ApplyButton onClick={onClick} />;
+          case "cancel":
+            return isCancelMode ? <ApplyButton onClick={onClick} /> : <JoinButton onClick={onClick} />;
+          default:
+            break;
+        }
+      })()}
     </div>
   );
 };
